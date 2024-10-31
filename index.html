@@ -14,12 +14,12 @@
 
         .nft {
             display: inline-grid;
-            margin: 25px;
+            margin: 30px;
             padding: 10px;
-            max-width: 300px;
+            width: 250px;
         }
 
-        .nft img {
+        .nft img,a {
             width: 170px;
             height: 170px;
             display: block;
@@ -33,14 +33,15 @@
             margin-bottom: 50px;
         }
         h2{
-            position: relative;
-            font-size: 20px;
+            font-size: 15px;
+            width: 250px;
+            font-weight: normal;
         }
     </style>
 </head>
 
 <body>
-    <h1>Tezos NFT Collection - Infinite</h1>
+    <h1>NFT Collection - Infinite</h1>
     <div id="nft-container"></div>
 
     <script>
@@ -106,10 +107,10 @@
                     const thumbnailUri = nft.token.metadata.displayUri || '';
 
                     nftElement.innerHTML = `
-                <a href="https://tzkt.io/${nft.token.contract.address}/tokens/${nft.token.tokenId}" target="_blank">
-                </a>
-                <h2>${nft.token.metadata.name}</h2>
-            `;
+                        <a href="https://objkt.com/tokens/${nft.token.contract.address}/${nft.token.tokenId}" target="_blank">
+                        </a>
+                        <h2>${nft.token.metadata.name}</h2>
+                    `;
 
                     const imageElement = createImageElement(thumbnailUri, nft.token.metadata.name);
                     nftElement.querySelector('a').appendChild(imageElement);
